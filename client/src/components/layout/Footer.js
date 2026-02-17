@@ -59,8 +59,9 @@ export default function Footer() {
                 placeholder="Enter your e-mail..."
                 aria-label="Email address"
                 required
+                suppressHydrationWarning
               />
-              <button type="submit" className="footer__button">
+              <button type="submit" className="footer__button" suppressHydrationWarning>
                 SUBSCRIBE
               </button>
             </form>

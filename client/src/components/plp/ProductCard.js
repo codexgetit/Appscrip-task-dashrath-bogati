@@ -50,6 +50,7 @@ export default function ProductCard({ product, badge }) {
           className="product-card__wishlist"
           onClick={() => setWishlisted((v) => !v)}
           aria-label={wishlisted ? "Remove from wishlist" : "Add to wishlist"}
+          suppressHydrationWarning
         >
           <svg
             width="20"
