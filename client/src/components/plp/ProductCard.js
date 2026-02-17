@@ -7,6 +7,11 @@ import "../../styles/product-card.css";
 export default function ProductCard({ product, badge }) {
   const [wishlisted, setWishlisted] = useState(false);
 
+  if (!product) return null;
+
+  const imageSrc = product?.image || "/images/fallback.svg";
+  const title = product?.title || "Product";
+
   return (
     <article className="product-card">
       <figure className="product-card__figure">
@@ -22,8 +27,8 @@ export default function ProductCard({ product, badge }) {
           </span>
         )}
         <Image
-          src={product.image}
-          alt={product.title}
+          src={imageSrc}
+          alt={title}
           width={400}
           height={400}
           className="product-card__image"
@@ -33,7 +38,7 @@ export default function ProductCard({ product, badge }) {
 
       <div className="product-card__info">
         <div className="product-card__details">
-          <h3 className="product-card__title">{product.title}</h3>
+          <h3 className="product-card__title">{title}</h3>
           <p className="product-card__price">
             <a href="/signin" className="product-card__price-link">
               Sign in

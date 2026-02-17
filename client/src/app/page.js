@@ -2,6 +2,7 @@ import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 import Hero from "../components/plp/Hero";
 import PlpSection from "../components/plp/PlpSection";
+import ErrorBoundary from "../components/ErrorBoundary";
 import { getProducts } from "../lib/api";
 
 export const metadata = {
@@ -17,7 +18,15 @@ export default async function Page() {
     <main>
       <Navbar />
       <Hero />
-      <PlpSection products={products} />
+      <ErrorBoundary>
+        {products?.length > 0 ? (
+          <PlpSection products={products} />
+        ) : (
+          <section className="plp-fallback" aria-label="Product listing">
+            <p className="plp-fallback__text">Loading products...</p>
+          </section>
+        )}
+      </ErrorBoundary>
       <Footer />
     </main>
   );

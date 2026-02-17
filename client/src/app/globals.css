@@ -48,3 +48,35 @@ ul,
 ol {
   list-style: none;
 }
+
+/* ============================================
+   Fallback & Error States
+   ============================================ */
+
+.plp-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  padding: 40px 20px;
+}
+
+.plp-fallback__text {
+  text-align: center;
+  color: #666;
+  font-size: 16px;
+}
+
+.error-boundary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  padding: 40px 20px;
+}
+
+.error-boundary__text {
+  text-align: center;
+  color: #666;
+  font-size: 16px;
+}

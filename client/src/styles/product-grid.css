@@ -10,6 +10,21 @@
   padding: 10px 0;
 }
 
+/* Empty / Loading states */
+.product-grid--empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+
+.product-grid__empty-state {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  font-size: 16px;
+}
+
 /* ============================================
    Responsive
    ============================================ */

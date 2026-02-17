@@ -2,16 +2,16 @@ const API_URL = "https://fakestoreapi.com/products";
 
 export async function getProducts() {
   try {
-    const res = await fetch(API_URL, { cache: "no-store" });
+    const res = await fetch(API_URL, { next: { revalidate: 60 } });
 
     if (!res.ok) {
-      console.error(`Failed to fetch products: ${res.status} ${res.statusText}`);
-      return [];
+      throw new Error(`HTTP ${res.status}: ${res.statusText}`);
     }
 
-    return res.json();
+    const data = await res.json();
+    return Array.isArray(data) ? data : [];
   } catch (error) {
-    console.error("Error fetching products:", error);
+    console.error("Product API Error:", error);
     return [];
   }
 }

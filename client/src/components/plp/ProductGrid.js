@@ -1,8 +1,6 @@
 import ProductCard from "./ProductCard";
 import "../../styles/product-grid.css";
 
-const BADGES = ["NEW PRODUCT", "OUT OF STOCK"];
-
 function getBadge(index) {
   if (index === 0) return "NEW PRODUCT";
   if (index === 3) return "OUT OF STOCK";
@@ -10,11 +8,19 @@ function getBadge(index) {
 }
 
 export default function ProductGrid({ products }) {
+  if (!products || products.length === 0) {
+    return (
+      <div className="product-grid product-grid--empty">
+        <p className="product-grid__empty-state">No products available</p>
+      </div>
+    );
+  }
+
   return (
     <div className="product-grid">
       {products.map((product, index) => (
         <ProductCard
-          key={product.id}
+          key={product?.id ?? index}
           product={product}
           badge={getBadge(index)}
         />
