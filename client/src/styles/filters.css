@@ -1,0 +1,141 @@
+/* ============================================
+   Sidebar Filters — BEM
+   ============================================ */
+
+.filters {
+  width: 260px;
+  min-width: 260px;
+  padding: 20px 24px 20px 0;
+  transition: width 0.3s ease, opacity 0.3s ease, min-width 0.3s ease,
+    padding 0.3s ease;
+  overflow: hidden;
+}
+
+.filters--hidden {
+  width: 0;
+  min-width: 0;
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Customizable checkbox */
+.filters__checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 8px 0;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  user-select: none;
+}
+
+.filters__checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #000;
+  cursor: pointer;
+}
+
+.filters__checkbox-label {
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  font-size: 14px;
+}
+
+.filters__divider {
+  border: none;
+  border-top: 1px solid #e5e5e5;
+  margin: 8px 0;
+}
+
+/* Filter section */
+.filters__section {
+  margin: 0;
+}
+
+.filters__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 12px 0 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.filters__title-text {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.filters__chevron {
+  transition: transform 0.2s ease;
+}
+
+.filters__chevron--open {
+  transform: rotate(180deg);
+}
+
+.filters__value {
+  font-size: 14px;
+  color: #888;
+  margin: 0 0 4px;
+  padding: 0;
+}
+
+/* Accordion content */
+.filters__content {
+  padding: 8px 0 4px;
+}
+
+.filters__options {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.filters__option {
+  padding: 6px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.filters__option label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.filters__option input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #000;
+  cursor: pointer;
+}
+
+/* ============================================
+   Responsive — Mobile (≤ 768px)
+   ============================================ */
+
+@media (max-width: 768px) {
+  .filters {
+    width: 100%;
+    min-width: 100%;
+    padding: 16px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .filters--hidden {
+    display: none;
+  }
+}

@@ -1,0 +1,22 @@
+/* ============================================
+   PLP Section Layout
+   ============================================ */
+
+.plp {
+  display: flex;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+  min-height: 60vh;
+}
+
+/* ============================================
+   Responsive — Mobile (≤ 768px)
+   ============================================ */
+
+@media (max-width: 768px) {
+  .plp {
+    flex-direction: column;
+    padding: 0 12px;
+  }
+}
